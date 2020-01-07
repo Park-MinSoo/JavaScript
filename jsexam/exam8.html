@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 랜덤값 처리</h1>
+<hr>
+<script>
+for(var i=0; i <10; i++){	// 10번 수행해라	
+	var rand = Math.random();// 0.0<= rand < 1.0
+	console.log(rand);	// 0.0<= rand < 1.0
+	console.log(rand*3);	// 0.0<= rand < 3.0
+	console.log(Math.floor(rand*3));	// 0.0<= rand < 3.0 (보다 작은 가장 가까운 정수 부분만)
+	console.log("-----------------------");	
+	document.write(Math.floor(rand*3) +"<br>");	// 0.0<= rand < 3.0 (보다 작은 가장 가까운 정수부분만) 값만 출력되며 계행 처리
+}
+</script>
+</body>
+</html>
+
+
+
+
+

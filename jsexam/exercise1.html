@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>구구단 실습!</h1>
+<hr>
+<pre>
+<script>
+	while(true){
+	var num=window.prompt("구구단을 수행하려는 숫자를 입력해 주세요.");
+		if(num >= 1 && num <=9) {
+			document.writeln("<h1>" + num + "단입니다.</h1><hr>");
+			for(var su=1;su <= 9;su++){
+				document.writeln(num + ' X ' + su + ' = ' + num * su);
+			} 
+		}
+		else{
+			window.alert("1부터 9까지의 숫자를 다시 입력해 주세요!");
+			continue;	// 다시 조건식을 수행하라는 뜻
+		}
+	break;
+  }
+</script>
+</pre>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	span { color : red; }
+	h2 { color : blue; }
+</style>
+</head>
+<body>
+<h1>입력 연산자 실습</h1>
+<hr>
+<pre>
+<script>
+	var num1=window.prompt("첫 번째 숫자를 입력해 주세요.");
+	var num2=window.prompt("두 번째 숫자를 입력해 주세요.");
+	var eq=window.prompt("수행하려는 연산자를 입력해 주세요.");
+	if(eq == '+' || eq == '-' || eq == '*' || eq == '/' || eq == '%') {
+		var result=0;
+		switch(eq) {
+		case '+':
+			result = (Number(num1) + Number(num2));
+			break;
+		case '-':
+			result = (num1 - num2);
+			break;
+		case '*':
+			result = (num1 * num2);
+			break;
+		case '/':
+			result = (num1 / num2);
+			break;
+		case '%':
+			result = (num1 % num2);
+			break;
+		default:
+			}
+		document.writeln("<h2>" + num1 + ' 와 ' + num2 + ' 의  ' + eq + " 연산 결과는 " + result + "입니다." + "</h2>");
+	} else {
+		document.writeln("<span> +, -, *, /, % 만 입력 가능</span>");
+	}
+</script>
+</pre>
+</body>
+</html>

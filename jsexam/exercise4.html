@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 실습2</title>
+</head>
+<body>
+<script>
+var a1 = new Array(10);
+var rand =0;
+for(var i=0;i<a1.length;i++){
+	rand = Math.random();
+	a1[i] = Math.floor(rand*50) + 1;
+}
+document.write("<h4>정렬 전 : " + a1+ "</h4>");
+
+var result = a1.sort(function(a, b){ return a-b;});
+document.write("<h4>정렬 후 : " + result + "</h4>");
+
+</script>
+</body>
+</html>
