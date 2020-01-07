@@ -68,3 +68,5 @@ v1 = true; // boolean
    - HTML5 API
      - Canvas - flash를 대신하도록 만들어진 API
      - WebStorage - 브라우저가 정해져있는 규격의 폴더에 자체적으로 저장 & 읽음을 할 수 있게 해줌
+     - drag&drop - 이메일 같은 것을 첨부 할때 파일을 끌어다 쓰는 것.
+     - geolocation - 위치 정보를 알려 주는 것. (PC의 네트워크 기지국을 가지고 판단한다.)
