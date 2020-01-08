@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>함수에서 데이터의 타입채크</h2>
+<hr>
+<button onclick="clickProcess(100);">숫자</button>	// onclick 이란? 클릭이 되어지면, 클릭 프로세스가  진행되게 하여라~
+<button onclick="clickProcess('100');">문자열</button>
+<button onclick="clickProcess(true);">논리값</button>
+<button onclick="clickProcess(function(){ });">함수</button>
+<button onclick="clickProcess([ ]);">배열</button>
+<button onclick="clickProcess({ });">객체</button>
+<button onclick="clickProcess();">????</button>
+<script>
+function clickProcess(p) {	// 이런 애들을 이벤트 헨들러 함수라고 한다. (즉, 이벤트가 발생했을 때 호출되는 함수이다.)
+	if (typeof p == "number") {
+		alert("숫자 전달!!");
+	} else if (typeof p == "string") {
+		alert("문자열 전달!!");
+	} else if (typeof p == "boolean") {
+		alert("논리값 전달!!");
+	} else if (typeof p == "function") {
+		alert("함수 전달!!");
+	} else if (typeof p == "object") {
+		if (Array.isArray(p))
+			alert("배열객체 전달!!");
+		else 
+			alert("객체 전달!!");
+	} else if (typeof p == "undefined") {  // p == undefined
+		alert("전달된 아규먼트 없음!!");
+	}	
+}
+</script>
+</body>
+</html>

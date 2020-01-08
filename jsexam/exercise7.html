@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function printH1(content){
+	document.write('<h1>'+ content +'</h1>');
+}
+function printH4(content){
+	document.write('<h4>'+ content +'</h4>');
+}
+
+function apply(p1,p2){
+	if(Array.isArray(p1) && typeof p2 == 'function'){
+		for(var i = 0;i < p1.length ;i++){
+		p2(p1[i]);
+		}
+		return true;
+	}
+	else{	
+		console.log('아규먼트 오류');
+		return false;
+	}
+	return flag;
+}
+var ary = [];
+
+while(true){
+	var data=window.prompt("배열에 저장할 데이터를 입력해 주세요.");
+	ary.push(data)
+	var result = window.confirm("계속 수행할까요?");
+	if(!result)
+		break;
+  }
+
+var d = new Date();
+var n = d.getDay();
+var df;
+switch (n){
+case 1:
+case 3:
+case 5:
+	df = apply(ary,printH1);
+	break;
+	
+case 2:
+case 4:
+	df = apply(ary,printH4);
+	break;
+
+case 0:
+	df = apply('ㅋㅋ',printH1);
+	break;
+
+case 6:
+	df = apply(ary);
+	break;
+default:
+}
+
+if(df)
+	window.alert("성공");
+	
+else
+	window.alert("실패");
+
+</script>
+</body>
+</html>

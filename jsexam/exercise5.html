@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise 5</title>
+</head>
+<body>
+<script>
+var sm = 0;
+function sum(p1){
+	if(p1 == undefined){
+
+	}
+	else{
+	for(var i = 1;i<=p1;i++){
+		sm = sm + i;
+		}
+	return sm;
+	  }
+	}
+var arg = Math.floor(Math.random()*6); 	
+sum(arg);
+var result1 = 0;
+	if(arg == 0){
+	result1 = sum();
+	}
+	if(result1 == undefined){
+		document.write('결과값이 없어요!!');
+	}
+	else{
+	document.write('호출 결과 값 : ' + sm +'<br>');
+	}
+</script>
+</body>
+</html>

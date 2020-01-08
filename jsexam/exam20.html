@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>자바스크립트 변수의 스코프(2)</h2>
+<hr>
+<script src="util.js"></script>
+<script>
+var g_v = 100;	// 전역 변수
+function scopeTest() {
+	var l_v = 1000;	// 지역 변수 - 선언된 함수 내에서만 사용이 가능하다.
+	writeNewLine("scopeTest() l_v : " + l_v);
+	writeNewLine("scopeTest() g_v : " + g_v );
+}
+scopeTest();
+try {
+	writeNewLine("l_v : " + l_v  );
+} catch(e) {	// 자바와는 다르게 Catch 구문에 변수만 집어 넣으면 된다.
+	writeNewLine(e);
+}
+writeNewLine("g_v : " + g_v );
+</script>
+</body>
+</html>
+
+
+
+
+
+
