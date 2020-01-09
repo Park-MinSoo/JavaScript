@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>실습 9</h1>
+<hr>
+<script src="util.js"></script>
+<script>
+var weekday = new Array(7);
+weekday[0] = "일";
+weekday[1] = "월";
+weekday[2] = "화";
+weekday[3] = "수";
+weekday[4] = "목";
+weekday[5] = "금";
+weekday[6] = "토";
+	
+function DayInfo(p1, p2, p3, p4) {	
+	this.name = p1;
+	this.year = p2;
+	this.month = p3;
+	this.day = p4;
+}
+	DayInfo.prototype.getTotalDays = function(){
+		return this.name + "님은 태어난지 " + Math.floor((new Date() - new Date(this.year, this.month -1, this.day))/(24*60*60*1000)) + "일 되었어요.";
+	};	
+	DayInfo.prototype.getKorDay = function(){
+		return this.name + "님은 " + weekday[new Date(this.year, this.month - 1, this.day).getDay()] + "요일에 태어났어요.";
+	};
+
+
+var DayInfo1 = new DayInfo('박민수',1995,04,29);
+var DayInfo2 = new DayInfo('최까치',2001,01,01);
+var DayInfo3 = new DayInfo('김천사',1992,10,04);
+
+
+writeColor(DayInfo1.getTotalDays(),"h3","blue");
+writeColor(DayInfo1.getKorDay(),"h3","purple");
+writeColor(DayInfo2.getTotalDays(),"h3","red");
+writeColor(DayInfo2.getKorDay(),"h3","green");
+writeColor(DayInfo3.getTotalDays(),"h3","orange");
+writeColor(DayInfo3.getKorDay(),"h3","black");
+
+</script>
+</body>
+</html>
+

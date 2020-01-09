@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>실습 8</h1>
+<hr>
+<script src="util.js"></script>
+<script>
+function printObject(p){
+	if(typeof p != 'object'){
+
+	}
+	else{
+	writeColor(p.msg,p.tag,p.color);
+	  }
+	}
+
+
+var tester1 = {
+		tag : "h3",
+		color : "blue",
+		msg : "맛있는 음식을 먹고 싶어요!"
+	}
+var tester2 = {
+		tag : "h2",
+		color : "red",
+		msg : "자바 스크립트를 열심히 공부해요"
+	}
+var tester3 = {
+		tag : "h4",
+		color : "green",
+		msg : "잠을 충분히 자고 싶어요!"
+	}
+var tester4 = {
+		tag : "h1",
+		color : "pink",
+		msg : "지하철을 편하게 타고 싶어요!"
+	}
+var tester5 = {
+		tag : "h3",
+		color : "purple",
+		msg : "커피를 마시고 싶어요!"
+	}
+	
+printObject(tester1);
+hr();
+printObject(tester2);
+hr();
+printObject(tester3);
+hr();
+printObject(tester4);
+hr();
+printObject(tester5);
+
+</script>
+</body>
+</html>
+

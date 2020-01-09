@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//변수를 선언합니다.
+var child = window.open('/edu/first.html', '', 'width=300, height=200');
+var width = screen.width;
+var height = screen.height;
+child.moveTo(0, 0);	//screen에서 left-top이 (0,0)이다.
+child.resizeTo(width, height);   // 이런크기가 되게 해라!
+window.setInterval(function () {
+    child.resizeBy(-20, -20);	//현재 사이즈에서 이만큼씩 줄여라!
+    child.moveBy(10, 10);	// 현재 위치에서 가로 세로 이만큼씩 움직여라!
+}, 2000);  // 2000밀리세컨드. 즉 2초마다 사이즈를 줄이게 되는 결과가 나타난다.
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
