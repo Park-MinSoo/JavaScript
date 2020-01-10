@@ -121,20 +121,21 @@ JavaScript 코드로 HTML 태그나 속성 그리고 컨텐츠를 읽거나 변�
    ```javascript
    <button>2<button>
       
-   var dom = document.getElementsTagName("button")[0];
+   var dom = document.getElementsByTagName("button")[0];
    dom.onclick = function() {코드};
+   
+dom.onclick = null; 		// 이벤트 해제 하는 방법
    ```
 
    
 
    (3) 표준 이벤트 모델
-
+   
    ```javascript
    <button>3<button>
    
-   var dom = document.getElementsTagName("button")[0];
+   var dom = document.getElementsByTagName("button")[0];
    dom.addEventListener("click", function() {코드});
+   
+   dom.removeEventListener("click", function() {코드});	// 이벤트 삭제 하는 방법
    ```
-
-
-
