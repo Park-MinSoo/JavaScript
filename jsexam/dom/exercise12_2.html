@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2{
+	margin : auto;
+	text-align : center;
+}
+div{
+	margin : auto;
+	text-align : center;
+}
+h3{
+	margin : auto;
+	text-align : center;
+}
+
+</style>
+</head>
+<body>
+	<h2>구구단</h2>
+	<div>
+	<button>1단</button>
+	<button>2단</button>
+	<button>3단</button>
+	<button>4단</button>
+	<button>5단</button>
+	<button>6단</button>
+	<button>7단</button>
+	<button>8단</button>
+	<button>9단</button>
+	</div>
+	<h3></h3>
+<script>
+var target = document.getElementsByTagName("h3")[0];
+
+var dan = document.getElementsByTagName("button");
+
+var dan1 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "1" + "X" + dandan + "=" + (1 * dandan) + "</h3>";
+	};
+
+var dan2 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "2" + "X" + dandan + "=" + (2 * dandan) + "</h3>";
+	};
+	
+var dan3 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "3" + "X" + dandan + "=" + (3 * dandan) + "</h3>";
+	};	
+	
+var dan4 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "4" + "X" + dandan + "=" + (4 * dandan) + "</h3>";
+	};	
+	
+var dan5 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "5" + "X" + dandan + "=" + (5 * dandan) + "</h3>";
+	};	
+		
+var dan6 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "6" + "X" + dandan + "=" + (6 * dandan) + "</h3>";
+	};			
+		
+var dan7 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "7" + "X" + dandan + "=" + (7 * dandan) + "</h3>";
+	};			
+					
+var dan8 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "8" + "X" + dandan + "=" + (8 * dandan) + "</h3>";
+	};			
+	
+var dan9 = function(){
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "9" + "X" + dandan + "=" + (9 * dandan) + "</h3>";
+	};		
+	
+dan[0].onclick = dan1;
+dan[1].onclick = dan2;
+dan[2].onclick = dan3;
+dan[3].onclick = dan4;
+dan[4].onclick = dan5;
+dan[5].onclick = dan6;
+dan[6].onclick = dan7;
+dan[7].onclick = dan8;
+dan[8].onclick = dan9;
+
+	</script>
+</body>
+</html>
+

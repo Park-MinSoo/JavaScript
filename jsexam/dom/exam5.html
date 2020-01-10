@@ -25,8 +25,8 @@
 	function f3() {
 		alert(dom3.textContent);
 	}    
-    dom2.onclick = f2;
-    dom3.addEventListener("click", f3);
+    dom2.onclick = f2;	//f2()가 아니다! 실제 함수를 전달해야하므로 함수 이름만 주어야 한다.
+    dom3.addEventListener("click", f3);	// 이벤트 핸들러로 함수(f3)를 전달한다.
 </script>
 </body>
 </html>

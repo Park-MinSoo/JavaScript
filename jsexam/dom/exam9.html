@@ -39,11 +39,11 @@ function clickHandler() {
 	dom1.addEventListener("click", displayAlert);	
 	dom2.addEventListener("click", displayAlert);	
 	dom3.addEventListener("click", displayAlert);	
-	dom4.addEventListener("click", displayAlert);	
+	dom4.addEventListener("click", displayAlert);	// 이벤트가 발생된 타겟 객체를 출력한다.
 }
 function displayAlert(e) {
-	window.alert(e.target+"\n"+e.currentTarget+"\n"+this);
-	e.stopPropagation();
+	window.alert(e.target+"\n"+e.currentTarget+"\n"+this);	//alert창에 계행문자를 붙여가며 행단위로 this를 출력하였다.
+	e.stopPropagation();	// 이것을 주석 처리하면 모든 조상 alert가 다 수행되게 된다. 이것이 바로 이벤트 버블링인 것이다.
 }
 window.addEventListener("load", clickHandler);
 </script>

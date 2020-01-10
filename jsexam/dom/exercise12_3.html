@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2{
+	margin : auto;
+	text-align : center;
+}
+div{
+	margin : auto;
+	text-align : center;
+}
+h3{
+	margin : auto;
+	text-align : center;
+}
+
+</style>
+</head>
+<body>
+	<h2>구구단</h2>
+	<div>
+	<button>1단</button>
+	<button>2단</button>
+	<button>3단</button>
+	<button>4단</button>
+	<button>5단</button>
+	<button>6단</button>
+	<button>7단</button>
+	<button>8단</button>
+	<button>9단</button>
+	</div>
+	<h3></h3>
+<script>
+var target = document.getElementsByTagName("h3")[0];
+	
+var dan1 = document.getElementsByTagName("button")[0];
+dan1.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "1" + "X" + dandan + "=" + (1 * dandan) + "</h3>";
+	});	
+	
+var dan2 = document.getElementsByTagName("button")[1];
+dan2.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "2" + "X" + dandan + "=" + (2 * dandan) + "</h3>";
+	});		
+
+var dan3 = document.getElementsByTagName("button")[2];
+dan3.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "3" + "X" + dandan + "=" + (3 * dandan) + "</h3>";
+	});	
+
+var dan4 = document.getElementsByTagName("button")[3];
+dan4.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "4" + "X" + dandan + "=" + (4 * dandan) + "</h3>";
+	});	
+
+var dan5 = document.getElementsByTagName("button")[4];
+dan5.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "5" + "X" + dandan + "=" + (5 * dandan) + "</h3>";
+	});	
+
+var dan6 = document.getElementsByTagName("button")[5];
+dan6.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "6" + "X" + dandan + "=" + (6 * dandan) + "</h3>";
+	});	
+
+
+var dan7 = document.getElementsByTagName("button")[6];
+dan7.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "7" + "X" + dandan + "=" + (7 * dandan) + "</h3>";
+	});	
+
+var dan8 = document.getElementsByTagName("button")[7];
+dan8.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "8" + "X" + dandan + "=" + (8 * dandan) + "</h3>";
+	});	
+
+var dan9 = document.getElementsByTagName("button")[8];
+dan9.addEventListener("click", function() {
+	target.innerHTML = "";
+	for(dandan = 1; dandan<=9;dandan++)
+	target.innerHTML += "<h3>" + "9" + "X" + dandan + "=" + (9 * dandan) + "</h3>";
+	});	
+
+	</script>
+</body>
+</html>
+

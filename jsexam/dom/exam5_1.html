@@ -21,8 +21,9 @@
 	var dom2 = document.querySelector('#t1');
     var dom3 = document.querySelector('#t2');
 	function f2(e) {
-		//alert(e.target.textContent);
-		alert(this.textContent);
+		alert(e.target.textContent);
+		alert(this.textContent);	//여기서의 this 는 event target을 참조하게 된다.
+		//console.log(this);
 	} 
     dom2.onclick = f2;
     dom3.addEventListener("click", f2);

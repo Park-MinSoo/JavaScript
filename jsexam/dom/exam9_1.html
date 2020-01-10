@@ -39,7 +39,7 @@ function clickHandler() {
 }
 function displayAlert(e) {
 	window.alert("h1 태그가 클릭됨!!"+this+e.target+e.currentTarget);
-	//e.stopPropagation();  	
+	//e.stopPropagation();  버블링 하지 말아라!
 }
 window.addEventListener("load", clickHandler);
 </script>

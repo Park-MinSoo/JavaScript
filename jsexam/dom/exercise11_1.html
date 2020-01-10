@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* .cr1 {
+  color: red;
+}
+.cr2 {
+  color: blue;
+}
+.cr3 {
+  color: yellow;
+} */
+</style>
+</head>
+<body>
+	<h2></h2>
+	<button onclick="turnRed()">빨강색</button>
+	<button onclick="turnBlue()">파랑색</button>
+	<button onclick="turnYellow()">노랑색</button>
+	
+	
+<script>
+var target = document.getElementsByTagName("h2")[0];
+
+var d = new Date();
+var n = d.getFullYear();
+var m = d.getMonth() + 1;
+var dd = d.getDate(); 
+
+target.innerHTML = "<h2> 오늘은 "+ n + "년 " + m + "월 " + dd + "입니다.</h2>";
+
+
+
+function turnRed() {
+	target.style.color = "red";
+	}
+function turnBlue() {
+	target.style.color = "blue";
+	}
+function turnYellow() {
+	target.style.color = "yellow";
+	}
+	
+	</script>
+</body>
+</html>
+

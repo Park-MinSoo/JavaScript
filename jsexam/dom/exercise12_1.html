@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2{
+	margin : auto;
+	text-align : center;
+}
+div{
+	margin : auto;
+	text-align : center;
+}
+h3{
+	margin : auto;
+	text-align : center;
+}
+
+</style>
+</head>
+<body>
+	<h2>구구단</h2>
+	<div>
+	<button onclick="dan(1)">1단</button>
+	<button onclick="dan(2)">2단</button>
+	<button onclick="dan(3)">3단</button>
+	<button onclick="dan(4)">4단</button>
+	<button onclick="dan(5)">5단</button>
+	<button onclick="dan(6)">6단</button>
+	<button onclick="dan(7)">7단</button>
+	<button onclick="dan(8)">8단</button>
+	<button onclick="dan(9)">9단</button>
+	</div>
+	<h3></h3>
+<script>
+var target = document.getElementsByTagName("h3")[0];
+
+var dan = function(number) {
+	target.innerHTML = "";	// 시작전에 화면 공백으로 초기화
+	for (dandan = 1; dandan<=9; dandan++)
+		target.innerHTML += "<h3>" + number + "X" + dandan + "=" + (number * dandan) + "</h3>";
+}
+	
+	</script>
+</body>
+</html>
+

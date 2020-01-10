@@ -7,7 +7,7 @@
 <body>
 <h1>자바스크립트의 이벤트 모델</h1>
 <hr>
-<button onmouseover="test1();">인라인이벤트모델</button>
+<button onmouseover="test1();">인라인이벤트모델</button>	<!-- onmouseover 마우스를 올릴 때 마다 수행된다. -->
 <button id="b1">고전이벤트모델</button>
 <button id="b2">표준이벤트모델</button>
 <script>
@@ -15,12 +15,12 @@ function test1() {
 	alert("인라인이벤트모델 버튼 클릭");
 }
 function test2() {
-	alert("고전이벤트모델 버튼 클릭");
-	btn1.onmouseover = null;
+	alert("고전이벤트모델 버튼 클릭");	
+	btn1.onmouseover = null;	// 등록후 해제가 가능하다.
 }
 function test3() {
 	alert("표준이벤트모델 버튼 클릭");
-	btn2.removeEventListener("mouseover", test3);
+	btn2.removeEventListener("mouseover", test3);	// 등록후 해제가 가능하다.
 }
 var btn1 = document.querySelector("#b1");
 var btn2 = document.getElementById("b2");
