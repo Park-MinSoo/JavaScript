@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>간단 메모지</title>
+
+<script>
+    var info, msg;
+	function saveText() {
+		info = document.getElementById("info");
+		info.style.display = "block";
+		localStorage.setItem("memo", msg.value);
+	};
+
+	function pageload() {
+		msg = document.getElementById("txtBox");	
+		msg.value = localStorage.getItem("memo");	// value 속성을 사용한다.
+	};
+
+	function clr() {
+		msg.value = "";
+		localStorage.clear();	// clear는 다 삭제해 버린다.
+		info.style.display = "none";
+	};
+</script>
+</head>
+<body onload="pageload()">
+	<h2>간단한 메세지</h2>
+	<textarea id="txtBox" onKeyDown="saveText();" onKeyUp="saveText();"	cols="50" rows="5"></textarea>
+	<!-- 항상 모든 자판을 누르기 시작하면 KeyDown이 발생하고, 떼면 KeyUp이 발생하게 된다.-->
+	<br />
+	<input type="button" value="메모지 비우기" onClick="clr();" />
+	<p id="info" style="display: none;">메모내용이 자동 저장되었습니다.</P>
+</body>
+</html>
+
+
+
+
+
+
+
+

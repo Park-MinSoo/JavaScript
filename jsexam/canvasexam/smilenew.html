@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button onclick="save();">저장하기</button>
+    <button onclick="del();">삭제하기</button> 
+    <button onclick="loading();">읽어오기</button>
+
+  <script>
+    function initiate(){
+	  var elem=document.getElementById('canvas');
+	  canvas=elem.getContext('2d');
+	canvas = document.getElementById("Canvas");
+
+	  var xcenter=220;
+	  var ycenter=150;
+	  var canvas;
+
+	  // 얼굴 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "#ffd9b3";
+	  canvas.arc(xcenter+50,ycenter,130,0,Math.PI*2, false);
+	  canvas.fill();
+	  
+	  // 흰자 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "black";
+	  canvas.arc(xcenter,ycenter-20,20,0,Math.PI*2, false);
+	  canvas.moveTo(xcenter+120,130);
+	  canvas.arc(xcenter+100,130,20,0,Math.PI*2, false);
+	  canvas.stroke();
+	  
+	  // 눈동자 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "black";
+	  canvas.moveTo(xcenter+10,ycenter-20);
+	  canvas.arc(xcenter+10,ycenter-20,10,0,Math.PI*2, false);
+	  canvas.moveTo(xcenter+80,ycenter-20);
+	  canvas.arc(xcenter+90,ycenter-20,10,0,Math.PI*2, false);
+	  canvas.fill();
+	  
+	  //입 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "Red";
+	  canvas.bezierCurveTo(250, 180, 300, 220, 300, 180);
+	  canvas.fill();
+	  
+	  //연지곤지 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "#ff66ff";
+	  canvas.moveTo(xcenter-60,ycenter+15);
+	  canvas.arc(xcenter-60,ycenter+15,15,0,Math.PI*2, false);
+	  canvas.moveTo(xcenter+90,165);
+	  canvas.arc(xcenter+150,165,15,0,Math.PI*2, false);
+	  canvas.fill();
+	  
+	  //모자 챙 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "black";
+	  canvas.fillRect(xcenter-60,ycenter-95,300,10);
+	  
+	  //모자 언덕 구현
+	  canvas.beginPath();
+	  canvas.fillStyle = "Red";
+	  canvas.fillRect(xcenter-60,ycenter-95,210,-80);
+	  
+	  // 모자 패턴 구현1
+	  canvas.beginPath();
+	  canvas.fillStyle = "Yellow";
+	  canvas.moveTo(180, 30);
+	  canvas.lineTo(250, 50);
+	  canvas.lineTo(170, 10);
+	  canvas.fill();
+	  
+	  // 모자 패턴 구현2
+	  canvas.beginPath();
+	  canvas.fillStyle = "Yellow";
+	  canvas.moveTo(230, 30);
+	  canvas.lineTo(280, 50);
+	  canvas.lineTo(360, 10);
+	  canvas.fill();
+	  
+	}
+	window.addEventListener("load", initiate, false);
+	
+	
+function save() {	
+    localStorage.setItem("canvas", canvas.toDataURL());    
+}	
+	
+function del() {
+    localStorage.removeItem("canvas");
+
+}	
+	
+function loading() {
+    localStorage.getItem("canvas", canvas.toDataURL());
+    
+    img.onload = function() {
+    	context.drawImage(img, 0, 0);
+    }
+	
+  </script>
+</head>
+  <section id="canvasbox">
+    <canvas id="canvas" width="500" height="300">
+      Your browser doesn't support the canvas element
+    </canvas>
+  </section>
+</body>
+</html>

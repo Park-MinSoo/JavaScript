@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>이미지 보이기</button>
+	<button>이미지 숨기기</button><br>
+	<img>
+<script>
+var target = document.getElementsByTagName("img")[0];
+
+
+var showpic = document.getElementsByTagName("button")[0];
+showpic.onclick = function() {
+	target.setAttribute("src", "http://blogfiles.naver.net/20150919_90/kimiyong88_1442646576744NAFqt_JPEG/B3%95%8C4.JPG");
+	};
+
+	
+var noshowpic = document.getElementsByTagName("button")[1];
+noshowpic.onclick = function() {
+	target.setAttribute("src", "");
+	};
+
+</script>
+</body>
+</html>
+
