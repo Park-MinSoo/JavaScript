@@ -9,14 +9,14 @@
     function initiate(){
 	  var images=document.querySelectorAll('#picturesbox > img');
 	  for(var i=0; i<images.length; i++){
-	    images[i].addEventListener('dragstart', dragged, false);	  
+	    images[i].addEventListener('dragstart', dragged, false);	// 모든 이미지에 대해서 드래그스타트 등록하고있다.
 	  }
 	  drop=document.getElementById('dropbox');
 	  drop.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
 	  drop.addEventListener('drop', dropped, false);
 	}
 	function dragged(e){
-	  elem=e.target; // this 동일 : 이벤트가 발생된 대상 DOM 객체
+	  var elem = e.target; // this 동일 : 이벤트가 발생된 대상 DOM 객체
 	  e.dataTransfer.setData('Text', elem.getAttribute('id'));
 	}
 	function dropped(e){

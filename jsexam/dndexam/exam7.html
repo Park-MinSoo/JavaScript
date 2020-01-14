@@ -22,7 +22,8 @@ window.onload = function() {
     
     target.ondragover = function(event) {
         if(event.preventDefault) event.preventDefault();
-        return false;
+        return false;	
+        // 브라우저가 preventDefault를 지원안할 경우라도 이벤트 핸들러가 false를 리턴하면 이벤트 기본과 에번트 버블링 모두 한번에 스탑하는 결과이다.
     }
     
     target.ondragenter = function(event){
@@ -38,7 +39,7 @@ window.onload = function() {
      target.ondrop = function(event){
         if(event.preventDefault) event.preventDefault();
         target.classList.remove('hover');
-        var filedata = event.dataTransfer.files[0];
+        var filedata = event.dataTransfer.files[0];	//[0]가 붙어있으므로 아무리 많은 파일을 호출하여도 첫 파일만 호출이 되게 된다.
         readFile(filedata);
     }
 }
@@ -61,7 +62,7 @@ function readFile(file) {
     var encodingList = document.getElementById("encoding");
     var encoding = encodingList.options[encodingList.selectedIndex].value;  
 
-    reader.readAsText(file, encoding);  
+    reader.readAsText(file, encoding);	//텍스트의 형식으로 읽는다, 두번쨰 아규먼트로는 어떠한 방식으로 읽어낼지 정한다.  
 };
 </script>
 </head>
@@ -82,6 +83,7 @@ function readFile(file) {
         <span id="fileSize">File Size</span>
     </div>
     <textarea id="droparea" class="droparea" readonly style="width:600px; height:400px;"></textarea>
+    <!-- Readonly 라는 것은 수정은 불가능하고 오직 읽을수만 있는 속성을 부여하는 것이다. -->
     </article>
 </section>
 </body>

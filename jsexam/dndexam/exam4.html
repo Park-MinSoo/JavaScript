@@ -11,7 +11,7 @@
 	  for(var i=0; i<images.length; i++){
 	    images[i].addEventListener('dragstart', dragged, false);
 	    images[i].addEventListener('dragend', ending, false);
-	  }
+	  }// 4개의 이미지 모두 드래그스타트와 드래그앤드 등록을 하고 있다.
 
 	  drop=document.getElementById('canvas');
 	  canvas=drop.getContext('2d');
@@ -28,15 +28,15 @@
 	function dragged(e){
 	  var elem=e.target;
 	  e.dataTransfer.setData('aa', elem.getAttribute('id'));
-	  e.dataTransfer.setDragImage(e.target, 0, 0);
+	  e.dataTransfer.setDragImage(e.target, 0, 0);	// 선택된 이미지의 위치를 left TOP(모서리 부분)으로 하겠다는 뜻이다. 
 	}
 	function dropped(e){
-	  e.preventDefault();
+	  e.preventDefault();	//기본 이벤트 핸들러는 반드시 해제한다.
 	  var id=e.dataTransfer.getData('aa');
 	  var elem=document.getElementById(id);
 
 	  var posx=e.pageX-drop.offsetLeft;
-	  var posy=e.pageY-drop.offsetTop;
+	  var posy=e.pageY-drop.offsetTop;	//얘네는 왜 필요할까?? 없으면 조금씩 밀리게 된다.
 
 	  canvas.drawImage(elem,posx,posy);//, 70, 70);
 	 

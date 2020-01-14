@@ -9,6 +9,7 @@
   function initiate(){
 	  drop=document.getElementById('dropbox');
 	  drop.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+	  //dragover는 기본적으로 기본을 해제해 주어야한다.
 	  drop.addEventListener('drop', dropped, false);
 	}
 	function dropped(e){
@@ -17,6 +18,7 @@
 	  var list='';
 	  for(var f=0;f<files.length;f++){
 	    list+='File: '+files[f].name+' '+files[f].size+' '+files[f].type+'<br>';
+	    // 하나 하나 꺼내서 list란 곳에 계속해서 append(+=)를 하는 것이다., 끝에 <br> 태그를 줌으로써 파일명들이 들어올때마다 계행처리가 되게한다.
 	  }
 	  drop.innerHTML=list;
 	}

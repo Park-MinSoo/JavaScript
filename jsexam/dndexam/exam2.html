@@ -20,16 +20,16 @@
 	}    
 	function entering(e){
 		console.log("타겟객체영역에들어감");
-	  drop.style.background='rgba(0,150,0,0.2)';
+	  drop.style.background='rgba(0,150,0,0.2)';	//초록색으로 바꿈
 	}
 	function leaving(e){
 		console.log("타겟객체영역에서나감");
-	  drop.style.background='#FFFFFF';
+	  drop.style.background='#FFFFFF';	//흰색으로 바꿈
 	}
 	function ending(e){
 	  console.log("드래그종료");
 	  elem=e.target;  // this
-	  //elem.style.visibility='hidden';	  
+	  elem.style.visibility='hidden';	  // 히든을 활성화 한다면 move 하는 효과를 나타낼수 있다!!
 	}
 	function dragged(e){
 	  console.log("드래그시작");

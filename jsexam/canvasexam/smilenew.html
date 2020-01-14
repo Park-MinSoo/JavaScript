@@ -8,16 +8,19 @@
     <button onclick="save();">저장하기</button>
     <button onclick="del();">삭제하기</button> 
     <button onclick="loading();">읽어오기</button>
+    <br>
 
-  <script>
-    function initiate(){
-	  var elem=document.getElementById('canvas');
-	  canvas=elem.getContext('2d');
-	canvas = document.getElementById("Canvas");
+ <script>
+ 
+ var elem;
+ console.log(elem);
+ var canvas;	 
+ function initiate(){
 
+	 elem=document.getElementById("canvas");
+	 canvas=elem.getContext('2d');	 
 	  var xcenter=220;
 	  var ycenter=150;
-	  var canvas;
 
 	  // 얼굴 구현
 	  canvas.beginPath();
@@ -88,27 +91,26 @@
 	
 	
 function save() {	
-    localStorage.setItem("canvas", canvas.toDataURL());    
+    localStorage.setItem("canvas", elem.toDataURL());    
 }	
 	
 function del() {
-    localStorage.removeItem("canvas");
-
+ //   localStorage.clear();
+ 	canvas.clearRect(0,0,500,400);
 }	
 	
 function loading() {
-    localStorage.getItem("canvas", canvas.toDataURL());
+   // localStorage.getItem("canvas", canvas.toDataURL());
     
+	var img = new Image();
+    img.src = localStorage.getItem("canvas");
     img.onload = function() {
-    	context.drawImage(img, 0, 0);
+    	canvas.drawImage(img, 0, 0);
     }
-	
-  </script>
-</head>
-  <section id="canvasbox">
-    <canvas id="canvas" width="500" height="300">
+}
+ </script>
+   <canvas id="canvas" width="500" height="400">
       Your browser doesn't support the canvas element
-    </canvas>
-  </section>
+   </canvas>
 </body>
 </html>
