@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset='utf-8'>
+     <title>New Web Project</title>
+     <script>	
+     window.onload = function() {
+ 		var request = new XMLHttpRequest();
+ 		request.onload = function(event) {
+ 			if (request.status == 200) {
+ 				var str = request.responseText;
+ 				var obj = JSON.parse(str);
+ 				
+ 				var target1 = document.getElementById('daytime');
+ 				target1.innerHTML = obj.time;
+ 				
+ 				var target2 = document.getElementById('temp');
+ 				target2.innerHTML = obj.temp;
+ 				
+ 				var target3 = document.getElementById('weatherimg');
+ 				//target3.innerHTML = obj.img;
+ 				target3.setAttribute("src",obj.img)
+ 			}
+ 		};
+ 		request.open('GET', 'content/weather.jsp', true);
+ 		request.send();
+ 	};
+     </script>
+    </head>
+    <body>
+        <h1 style="text-align : center">오늘의 날씨 정보</h1>
+        <hr>
+        <label>기준시간 : </label><span id="daytime"></span><br>
+        <label>기온 : </label><span id="temp"></span><label>도</label><br>
+        <label>날씨이미지출력 </label><br>
+        <img id="weatherimg" src="">
+    </body>
+</html>

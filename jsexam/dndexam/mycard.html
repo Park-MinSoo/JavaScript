@@ -5,13 +5,21 @@
   <title>Drag and Drop</title>
   <link rel="stylesheet" href="dragdrop.css">  
   <style>
+  	h1{
+  		text-shadow : 3px 3px 5px skyblue;
+  	}
+  
 	#dropbox {
 		width : 550px;
-		height : 1400px;
+		height : 700px;
 	}
 	#picturesbox {
 		width : 650px;
-		height : 1400px;
+		height : 700px;
+	}
+	img{
+	  height : 125px;
+	 
 	}
 </style>
   <script>
@@ -46,7 +54,7 @@
 	  var posx=e.pageX-drop.offsetLeft;
 	  var posy=e.pageY-drop.offsetTop;
 
-	  canvas.drawImage(elem,posx,posy);
+	  canvas.drawImage(elem,posx,posy,200,200);
 	 
 	}
 	window.addEventListener('load', initiate, false);
@@ -90,9 +98,8 @@ var text55='';
 	function printText2(e){
 	    var posx=e.pageX-drop.offsetLeft;
 	    var posy=e.pageY-drop.offsetTop;
-	    canvas.font="30px 맑은 고딕";
+	    canvas.font="bold 40px 나눔손글씨 펜";
 		canvas.fillText(text55,posx,posy);
-		
 		}
 		
 //me = e.target
@@ -113,7 +120,7 @@ var text55='';
    <label>입력 메세지 : </label><input id = "txtxtx" type="text" name= "gmsg" onchange="printText1(this)"><br>
     
   <section id="dropbox">
-    <canvas id="canvas" width="550" height="1400" onclick="printText2(event)"></canvas>
+    <canvas id="canvas" width="550" height="700" onclick="printText2(event)"></canvas>
   </section>
   <section id="picturesbox">
     <img id="image1" src="1.png">

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset='utf-8'>
+     <title>New Web Project</title>
+     <script>	
+     window.onload = function() {
+ 		var request = new XMLHttpRequest();
+ 		request.onload = function(event) {//onload로 구현할 경우 응답을 확인 안해도 된다. HTML5에서 지원함
+ 			if (request.status == 200) {// 하지만 응답을 받았다고 무조건 성공 응답이 오는것은 아니므로 200확인은 해주어야 한다.
+ 				var str = request.responseText;
+ 				var target = document.getElementById('output');
+ 				target.innerHTML = str;	// 애당초 HTML로 왔기 때문에 그냥 갔다 붙이기만 하면 되는 것이다.
+ 			}
+ 		};
+ 		request.open('GET', 'content/rss.jsp', true);
+ 		request.send();
+ 	};
+		
+     </script>
+    </head>
+    <body>
+        <h1 style="text-align : center">실시간 날씨 정보입니다.</h1>
+        <div id="output" style="width:350px; margin : 10px auto"></div><!-- 이곳에 컨텐트를 채워넣기 위해서 div 태그 내용이 비어있는 것이다. -->
+    </body>
+</html>

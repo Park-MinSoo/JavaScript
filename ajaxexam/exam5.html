@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	height: 100px;
+	width: 600px;
+	text-align: center;
+}
+</style>
+<script>
+window.onload = function() {
+	setInterval(function() {
+		var request = new XMLHttpRequest();
+		request.onload = function(event) {
+			if (request.status == 200) {
+				var str = request.responseText;
+				var obj = JSON.parse(str);	// jsp를 변환하여 obj에 담아주고있다.
+				var target = document.getElementById('news');
+				target.innerHTML = obj.news;	//뉴스라는 ID를 갖는 동객체를 innerHTML에 넣어줌
+			}
+		};
+		request.open('GET', 'content/newsjson.jsp', true);
+		request.send();
+	}, 2000);	//2초마다 한번 바뀌어라
+};	
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>뉴스 내용</th>
+		</tr>
+		<tr>
+			<td id="news">...........................................</td>
+		</tr>
+	</table>
+</body>
+</html>

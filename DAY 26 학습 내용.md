@@ -81,7 +81,7 @@ JavaScript 코드로 HTML 태그나 속성 그리고 컨텐츠를 읽거나 변�
    document.getElementsByClassName("태그의 class 속성값") // NodeList
    
    document.querySelector("CSS선택자")	// Node
-   document.querySelector("CSS선택자")	// NodeList
+   document.querySelector("CSS선택자")	// Node List
    ```
 
    
@@ -124,6 +124,8 @@ JavaScript 코드로 HTML 태그나 속성 그리고 컨텐츠를 읽거나 변�
    var dom = document.getElementsByTagName("button")[0];
    dom.onclick = function() {코드};
    
+   ```
+
 dom.onclick = null; 		// 이벤트 해제 하는 방법
    ```
 
