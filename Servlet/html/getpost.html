@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>서블릿을 요청하는 다양한 방법</h1>
+<hr>
+<a href="/sedu/getpost?name=듀크">하이퍼링크로 요청</a>	<!-- a태그는 get방식이다. -->
+<hr>
+<form method="get" action="/sedu/getpost">
+<input type="text" placeholder="이름을입력하세요" name="name" >
+<input type="submit"  value="GET방식요청">
+</form>
+<hr>
+<form method="post" action="/sedu/getpost">
+<input type="text" placeholder="이름을입력하세요" name="name" >
+<input type="submit"  value="POST방식요청">	<!-- post 방식은 서버에 전달되는 query가 노출되는것을 방지해줄 수 있다는 점에서 get과의 차이가 있다. , post는 동적할당을 하므로 파일을 올릴때는 post 방식을 많이 쓴다. get은 방의 크기를 정해놓고 받는것이기 때문 -->
+</form>
+</body>
+</html>
+
+
