@@ -20,7 +20,7 @@ public class SessionTestServlet1 extends HttpServlet {
 		PrintWriter out = response.getWriter();	
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("cnt") == null)	// 장바구니에 물건을 담을떄마다 계속 새 장바구니를 꺼내면 안되기 떄문
+		if(session.getAttribute("cnt") == null)	// 장바구니에 물건을 담을때 마다 계속 새 장바구니를 꺼내면 안되기 떄문
 			session.setAttribute("cnt", new int[1]);// session 데이터에 보관하는 데이터는 반드시 객체여야 한다.!!!,, 데이터를 저장할 방을 등록하고 있다.
 		int[] session_v = (int[])session.getAttribute("cnt");
 		session_v[0] += 10;

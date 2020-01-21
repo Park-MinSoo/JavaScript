@@ -127,13 +127,13 @@ JavaScript 코드로 HTML 태그나 속성 그리고 컨텐츠를 읽거나 변�
    ```
 
 dom.onclick = null; 		// 이벤트 해제 하는 방법
-   ```
+   ```javascript
 
    
 
    (3) 표준 이벤트 모델
    
-   ```javascript
+   javascript
    <button>3<button>
    
    var dom = document.getElementsByTagName("button")[0];

@@ -31,12 +31,21 @@
  				var str = request.responseText;
  				var obj = JSON.parse(str);
  				var target = document.getElementById("ss5");
- 				target.innerHTML = "<h3>" + p + "</h3>";
+ 				
+ 				if(p == "clear"){
+ 	 				target.innerHTML = " ";
+ 				}
+ 				else {
+ 					target.innerHTML += "<li>" + p + " 상품 " + " 개</li>";
+ 				}
+ 				
+ 			
  			}
  		};
- 		request.open('GET', "/sedu/basket1?pid=" + p, true);
+ 		request.open('GET', "/sedu/basket2?pid=" + p, true);
  		request.send();
  	};
+ 		
      </script>
 </head>
 <body>
@@ -55,6 +64,11 @@
 <img id="p009" src="/edu/images/콜라.jpg" width = "200" height = "200" onclick="askId('p009')">
 <img id="p010" src="/edu/images/제로콜라.jpg" width = "200" height = "200" onclick="askId('p010')">
 </div>
-<output id="ss5"></output>
-</body>
+<h2>선택한 상품 리스트</h2>
+<hr>
+<ul>
+<li id="ss5"></li>
+</ul>
+<img id="del" src="/edu/images/delete.png" width = "70" height = "70" onclick="askId('clear')">
+ </body>
 </html>

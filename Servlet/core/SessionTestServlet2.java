@@ -17,9 +17,9 @@ public class SessionTestServlet2 extends HttpServlet {
 		HttpSession session = request.getSession();
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();	
-		out.print("생성된 세션객체의 ID : "+session.getId());
+		out.print("생성된 세션객체의 ID : "+session.getId());	//쿠키 아이디를 가져오게 된다.
 		out.print("<br>세션 객체가 생성된 시간 : "
-				      + new Date(session.getCreationTime()));
+				      + new Date(session.getCreationTime()));	// 세션이 만들어진 시간을 가져오게 된다.
 		out.print("<br>현재 시간 : " + new Date());
 		out.close();
 	}
