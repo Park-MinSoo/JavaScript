@@ -25,24 +25,22 @@
 </style>
      <script>	
      function askId(p) {
+    	 console.log("askId");
   		var request = new XMLHttpRequest();
   		request.onload = function(event) {
  			if (request.status == 200) {
  				var str = request.responseText;
  				var obj = JSON.parse(str);
+ 				console.log(obj);
  				var target = document.getElementById("ss5");
- 				
- 				if(p == "clear"){
- 	 				target.innerHTML = " ";
- 				}
- 				else {
- 					target.innerHTML += "<li>" + p + " 상품 " + " 개</li>";
- 				}
- 				
- 			
+ 				for(var i in obj){
+ 					if(obj[i]==0) continue;
+ 					
+ 					target.innerHTML += "<li>" + i +"상품 :"+ obj[i]; + "개 </li>"  
+ 				} 
  			}
  		};
- 		request.open('GET', "/sedu/basket2?pid=" + p, true);
+ 		request.open('GET', "http://localhost:8000/sedu/basket2?pid=" + p, true);
  		request.send();
  	};
  		
@@ -66,9 +64,9 @@
 </div>
 <h2>선택한 상품 리스트</h2>
 <hr>
-<ul>
-<li id="ss5"></li>
-</ul>
+
+<span id="ss5"></span>
+
 <img id="del" src="/edu/images/delete.png" width = "70" height = "70" onclick="askId('clear')">
  </body>
 </html>
