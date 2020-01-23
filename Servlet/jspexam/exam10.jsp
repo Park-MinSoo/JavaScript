@@ -9,7 +9,7 @@
 <% if(request.getParameter("type")==null || 
            request.getParameter("type").equals("admin") ){ %>
   <jsp:forward page="admin_new.jsp">
-  	<jsp:param name="message" value="Hi! Administrator" />
+  	<jsp:param name="message" value="Hi! Administrator" /> <!-- 닫는 태그안에 / 를 꼭 줘서 닫아준다. -->
   </jsp:forward>
 <% } else  {%>
   <jsp:forward page="user_new.jsp">

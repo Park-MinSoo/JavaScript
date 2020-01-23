@@ -12,7 +12,7 @@
 <h3>빠른시일내에 복구하겠습니다...</h3>
 <img src="error.jpg">
 <%	
-    String msg = "오류 원인 : " + exception;	
+    String msg = "오류 원인 : " + exception;	// 여기서 exception은 내장객체변수이다. exception 만큼은 예외가 발생 하였을 경우에만 사용 할 수 있다. 즉, isErrorPage="true" 여야지만 쓸 수 있는 것이다.
 	System.out.println("----------------------------------------");
 	System.out.println(msg);
 	System.out.println("----------------------------------------");	

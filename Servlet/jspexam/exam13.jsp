@@ -10,7 +10,7 @@
 <h2>JSP의 내장 객체들 점검</h2>
 [ request ]<br>
 getMethod() : <%=  request.getMethod()  %><br>
-getRequestURI() : <%=  request.getRequestURI()  %><br>
+getRequestURI() : <%=  request.getRequestURI()  %><br>	
 getHeader("user-agent") : <%=  request.getHeader("user-agent")  %><br>
 [ application ]<br> 
 getContextPath() : <%=  application.getContextPath()  %><br>
@@ -20,10 +20,10 @@ getMajorVersion() : <%=  application.getMajorVersion()  %><br>
 getId() : <%=  session.getId()  %><br>
 getCreationTime() : <%=  new Date(session.getCreationTime())  %><br>
 [ response ]<br>
-getStatus() : <%=  response.getStatus() %><br>
-getBufferSize() : <%=  response.getBufferSize() %><br>
+getStatus() : <%=  response.getStatus() %><br><!--  응답 상태 -->
+getBufferSize() : <%=  response.getBufferSize() %><br> <!--  응답 버퍼 크기 -->
 getContentType() : <%=  response.getContentType() %>
-<H4>Web Application(/edu) 디렉토리의 파일 리스트 </H4>
+<H4>Web Application(/sedu) 디렉토리의 파일 리스트 </H4>
 <% 
 java.util.Set<String> list = application.getResourcePaths("/");
 if (list != null) {

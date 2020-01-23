@@ -31,11 +31,7 @@
  <%	
 	} 
 %>	
- 		<h2>로그인</h2><hr>
-		<form method="post"  action="/edu/jspexam/exam15.jsp">
-			<input placeholder="계정을 입력하세요" name="membername"><br>
-			<input type="password" placeholder="암호를 입력하세요" name="memberpassword"><br>
-			<input type="submit"  value="로그인">
-		</form>		
+<%@  include  file="login.jspf"  %>
+
 </body>
 </html>

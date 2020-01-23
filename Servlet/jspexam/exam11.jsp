@@ -10,7 +10,7 @@
 <H4>각 나라의 감사 인사말입니다.</H4>
 <P>
 한국어 : 
-<jsp:include page="greeting.jsp">
+<jsp:include page="greeting.jsp"><!-- include는 수행 시키고 결과를 포함하라는 뜻이다. include는 변환시 일어나게 된다.-->
    <jsp:param name="country" value="korea" />
 </jsp:include>
 </P>
