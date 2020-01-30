@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${ param.gname }님은 A등급입니다. 우수한 성적이네요(^^).</h1>
-<a href="<%= request.getHeader("referer") %> ">성적 입력 화면으로</a>
+
+<h1 style="color:red" > 더 이상 응모할 수 없어요... 브라우저를 재기동한 후에 응모하세요</h1>
 </body>
 </html>

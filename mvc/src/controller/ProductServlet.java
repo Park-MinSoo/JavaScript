@@ -21,11 +21,13 @@ public class ProductServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String pid = request.getParameter("pid");
 		HttpSession session = request.getSession();
+		String url ="/jspexam/productView.jsp";
 
 		if (session.getAttribute("cnt") == null)
 			session.setAttribute("cnt", new ProductVO());	
 		ProductVO vo =(ProductVO)session.getAttribute("cnt");
 
+		
 			switch (pid) {
 			case "p001":
 				vo.setApp(1);
@@ -36,9 +38,12 @@ public class ProductServlet extends HttpServlet {
 			case "p003":
 				vo.setBong(1);
 				break;
+			case "clear":
+				session.invalidate();
+				url ="/jspexam/clear1.jsp";
+				break;
 			}
-		request.setAttribute("product", vo);
-		RequestDispatcher rd1 = request.getRequestDispatcher("/jspexam/productView.jsp");
+		RequestDispatcher rd1 = request.getRequestDispatcher(url);
 		rd1.forward(request, response);
 	}
 }
