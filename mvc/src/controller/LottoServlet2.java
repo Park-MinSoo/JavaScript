@@ -20,7 +20,7 @@ public class LottoServlet2 extends HttpServlet {
 		String num = request.getParameter("number");
 		int rand = (int)(Math.random()*6)+1;
 		int numfn = Integer.parseInt(num);
-		System.out.println("ì „ë‹¬ëœ ê°’ : " + numfn + ", ì¶”ì¶œëœ ê°’ : " + rand);
+		System.out.println("? „?‹¬?œ ê°? : " + numfn + ", ì¶”ì¶œ?œ ê°? : " + rand);
 		HttpSession session = request.getSession();
 
 		if(session.getAttribute("cnt") == null)
@@ -29,19 +29,19 @@ public class LottoServlet2 extends HttpServlet {
 		session_v[0] += 1;
 		LottoVO vo = new LottoVO();
 		java.time.LocalDateTime ctime = java.time.LocalDateTime.now();
-		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("hhì‹œ mmë¶„");			
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("hh?‹œ mmë¶?");			
 
 		if(session_v[0]>=4) {
-			vo.setMsg("ë” ì´ìƒ ì‘ëª¨í•  ìˆ˜ ì—†ì–´ìš”....ã… ã…  ë¸Œë¼ìš°ì €ë¥¼ ì¬ê¸°ë™í•œ í›„ì— ì‘ëª¨í•˜ì„¸ìš”");
+			vo.setMsg("?” ?´?ƒ ?‘ëª¨í•  ?ˆ˜ ?—†?–´?š”....?… ?…  ë¸Œë¼?š°??ë¥? ?¬ê¸°ë™?•œ ?›„?— ?‘ëª¨í•˜?„¸?š”");
 		}
 		else {
 			if(numfn == rand) {
-				vo.setMsg(ctime.format(formatter) + "ì— ë‹¹ì²¨!!! ì¶”ì¹´ì¶”ì¹´~");		
+				vo.setMsg(ctime.format(formatter) + "?— ?‹¹ì²?!!! ì¶”ì¹´ì¶”ì¹´~");		
 				vo.setImgUrl("/edu/images/sun.png");
 				session_v[0]=4;
 			}
 			else {
-				vo.setMsg(ctime.format(formatter) + "ì— ë‹¹ì²¨ ì‹¤íŒ¨!! ì•„ì‰½ì•„ì‰½~");		
+				vo.setMsg(ctime.format(formatter) + "?— ?‹¹ì²? ?‹¤?Œ¨!! ?•„?‰½?•„?‰½~");		
 				vo.setImgUrl("/edu/images/sad.gif");				
 				vo.setLinkDisplay(true);
 			}						

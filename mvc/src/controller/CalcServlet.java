@@ -25,7 +25,7 @@ public class CalcServlet extends HttpServlet {
 		int result=0;
 	
 		if(oper.equals("/") && num2fn == 0) {
-			String error = "ë‚˜ëˆ—ì…ˆ ì—°ì‚°ì‹œ ë‘ ë²ˆì§¸ ìˆ«ìëŠ” 0ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!";
+			String error = "?‚˜?ˆ—?…ˆ ?—°?‚°?‹œ ?‘ ë²ˆì§¸ ?ˆ«??Š” 0?¼ ?ˆ˜ ?—†?Šµ?‹ˆ?‹¤!!";
 			request.setAttribute("error", error);
 			RequestDispatcher rd1 = request.getRequestDispatcher("/jspexam/errorResult.jsp");	
 			rd1.forward(request, response);				

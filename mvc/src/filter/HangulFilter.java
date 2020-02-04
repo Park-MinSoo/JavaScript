@@ -19,11 +19,11 @@ public class HangulFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-	//	System.out.println("HangulFilter ìˆ˜í–‰ - BEFORE");
+	//	System.out.println("HangulFilter ?ˆ˜?–‰ - BEFORE");
 		if(((HttpServletRequest)request).getMethod().equals("POST"))
 			request.setCharacterEncoding("UTF-8");		
 		chain.doFilter(request, response);
-	//	System.out.println("HangulFilter ìˆ˜í–‰ - AFTER");
+	//	System.out.println("HangulFilter ?ˆ˜?–‰ - AFTER");
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

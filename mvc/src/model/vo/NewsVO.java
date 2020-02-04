@@ -45,6 +45,7 @@ public class NewsVO {
 	}
 	@Override
 	public String toString() {
-		return "NewsVO [id=" + id + ", writer=" + writer + ", title=" + title + ", content=" + content + ", writedate=" + writedate + ", cnt=" + cnt + "]";
+		return "NewsVO [id=" + id + ", writer=" + writer + ", title=" + title + ", content=" + content + ", writedate="
+				+ writedate + ", cnt=" + cnt + "]";
 	}	
 }

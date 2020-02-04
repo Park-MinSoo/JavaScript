@@ -19,9 +19,9 @@ class VisitorDAOTest {
 	
 	@Test
 	void test1() {
-		System.out.println("ê²€ìƒ‰ ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸");
+		System.out.println("ê²??ƒ‰ ê¸°ëŠ¥ ?…Œ?Š¤?Š¸");
 		VisitorDAO dao = new VisitorDAO();
-		List<VisitorVO> list = dao.search("ë°¥");
+		List<VisitorVO> list = dao.search("ë°?");
 		System.out.println(list.size());
 		for(VisitorVO vo : list)
 			System.out.println(vo);
@@ -30,15 +30,15 @@ class VisitorDAOTest {
 	
 	@Test
 	void test2() {
-		System.out.println("ì‚½ì… í…ŒìŠ¤íŠ¸");
+		System.out.println("?‚½?… ?…Œ?Š¤?Š¸");
 		VisitorDAO dao = new VisitorDAO();
 		VisitorVO vo = new VisitorVO();
-		vo.setName("í¬ë™ì´");
-		vo.setMemo("~~~ì˜¤ëŠ˜ì€ ê·¸ëƒ¥ ê¸ˆìš”ì¼~~~");
-		boolean result = dao.insert(vo);	//insertê°€ ì˜ë˜ë©´ true ì•ˆë˜ë©´ falseì´ë‹¤.
+		vo.setName("?¬?™?´");
+		vo.setMemo("~~~?˜¤?Š˜?? ê·¸ëƒ¥ ê¸ˆìš”?¼~~~");
+		boolean result = dao.insert(vo);	//insertê°? ?˜?˜ë©? true ?•ˆ?˜ë©? false?´?‹¤.
 		if(result)
-			System.out.println("ì‚½ì… ì„±ê³µ");
+			System.out.println("?‚½?… ?„±ê³?");
 		else
-			fail("ì‚½ì…ì‹¤íŒ¨");
+			fail("?‚½?…?‹¤?Œ¨");
 	}
 }

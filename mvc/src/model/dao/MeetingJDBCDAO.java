@@ -25,7 +25,7 @@ public class MeetingJDBCDAO implements MeetingDAO {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
 				("select id, name, title,  to_char(meetingdate, "
-				+ "'yyyy\"년\" mm\"월\" dd\"일\" hh\"시\" mm\"분\"') from meeting");) {
+				+ "'yyyy\"\" mm\"\" dd\"\" hh\"\" mm\"\"') from meeting");) {
 			MeetingVO vo;
 			while(rs.next()) {
 				vo = new MeetingVO();
@@ -76,7 +76,7 @@ public class MeetingJDBCDAO implements MeetingDAO {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
 				("select id, name, title,  to_char(meetingdate, "
-						+ "'yyyy\"년\" mm\"월\" dd\"일\" hh\"시\" mm\"분\"') from meeting where title like '%"+keyword+"%'");) {
+						+ "'yyyy\"?��\" mm\"?��\" dd\"?��\" hh\"?��\" mm\"�?\"') from meeting where title like '%"+keyword+"%'");) {
 			MeetingVO vo;
 			while(rs.next()) {
 				vo = new MeetingVO();

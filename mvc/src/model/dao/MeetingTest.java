@@ -12,15 +12,15 @@ public class MeetingTest {
 	public void test() {
 		MeetingJDBCDAO dao = new MeetingJDBCDAO();
 		MeetingVO vo = new MeetingVO();
-		vo.setName("ë¼ì´ì–¸");
-		vo.setTitle("í™”ìš”ì¼ ì €ë… 6ì‹œì— ë§Œë‚©ì‹œë‹¤!");	
+		vo.setName("?¼?´?–¸");
+		vo.setTitle("?™”?š”?¼ ???… 6?‹œ?— ë§Œë‚©?‹œ?‹¤!");	
 		vo.setMeetingDate("2019-07-01T13:40");
 		dao.insert(vo);
 		List<MeetingVO> list = dao.listAll();
 		for(MeetingVO data : list)
 			System.out.println(data);
-		System.out.println("í™”ìš”ì¼ì´ ë“¤ì–´ê°„ ê¸€**"); 
-		list = dao.search("í™”ìš”ì¼");
+		System.out.println("?™”?š”?¼?´ ?“¤?–´ê°? ê¸?**"); 
+		list = dao.search("?™”?š”?¼");
 		for(MeetingVO data : list)
 			System.out.println(data);
 	}

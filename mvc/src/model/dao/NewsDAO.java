@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.vo.MeetingVO;
 import model.vo.NewsVO;
 
 public class NewsDAO {
@@ -62,7 +63,7 @@ public class NewsDAO {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
 				("select id, writer, title, content,  to_char(writedate, "
-				+ "'rrrr\"년\" mm\"월\" dd\"일\"'), cnt from news");) {
+				+ "'rrrr-mm-dd'), cnt from news");) {
 			NewsVO vo;
 			while(rs.next()) {
 				vo = new NewsVO();
@@ -90,11 +91,10 @@ public class NewsDAO {
 		try (Connection conn = DriverManager.getConnection
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				PreparedStatement pstmt = conn.prepareStatement(
-						"insert into news values(news_seq.nextval,?, ? ,?, to_date(sysdate, 'rrrr-mm-dd' ), ?)");){ 
+						"insert into news values(news_seq.nextval,?, ? ,?, to_date(sysdate, 'rrrr-mm-dd' ), 0)");){ 
 						pstmt.setString(1, vo.getWriter());
 						pstmt.setString(2, vo.getTitle());
-						pstmt.setString(3, vo.getContent());
-						pstmt.setInt(4, vo.getCnt());
+						pstmt.setString(3, vo.getContent());						
 						pstmt.executeUpdate();
 		} catch (SQLException e) {
 			result = false;
@@ -102,8 +102,8 @@ public class NewsDAO {
 		}
 		return result;
 	}
-/*	
-	public List<NewsVO> search(String keyword) {
+
+	public List<NewsVO> search(String keyword, String searchType) {
 		List<NewsVO> list = new ArrayList<>();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -114,15 +114,49 @@ public class NewsDAO {
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
-				("select id, name, title,  to_char(meetingdate, "
-						+ "'yyyy\"년\" mm\"월\" dd\"일\" hh\"시\" mm\"분\"') from meeting where title like '%"+keyword+"%'");) {
+				("select  id, writer, title, content,  to_char(writedate, "
+						+ "'rrrr-mm-dd'), cnt from news where " + searchType + " like '%"+keyword+"%'");) {
 			NewsVO vo;
 			while(rs.next()) {
 				vo = new NewsVO();
 				vo.setId(rs.getInt(1));
-				vo.setName(rs.getString(2));
+				vo.setWriter(rs.getString(2));
 				vo.setTitle(rs.getString(3));
-				vo.setMeetingDate(rs.getString(4));
+				vo.setContent(rs.getString(4));
+				vo.setWritedate(rs.getString(5));
+				vo.setCnt(rs.getInt(6));
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}	
+	
+
+	public List<NewsVO> listWriter(String writer) {
+		List<NewsVO> list = new ArrayList<>();
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try (Connection conn = DriverManager.getConnection
+				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", 
+						"jdbctest");
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery
+				("select id, writer, title, content,  to_char(writedate, "
+				+ "'rrrr-mm-dd'), cnt from news where writer like '%"+writer+"%'");) {
+			NewsVO vo;
+			while(rs.next()) {
+				vo = new NewsVO();
+				vo.setId(rs.getInt(1));
+				vo.setWriter(rs.getString(2));
+				vo.setTitle(rs.getString(3));
+				vo.setContent(rs.getString(4));
+				vo.setWritedate(rs.getString(5));
+				vo.setCnt(rs.getInt(6));
 				list.add(vo);
 			}
 		} catch (SQLException e) {
@@ -130,7 +164,7 @@ public class NewsDAO {
 		}
 		return list;
 	}
-*/
+	
 	public boolean delete(int id) {
 		boolean result = true;
 		try {
@@ -159,24 +193,17 @@ public boolean update(NewsVO vo) {
 		}
 		try(Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","jdbctest","jdbctest");
 				PreparedStatement pstmt = conn.prepareStatement(
-						"update news set " + 
-						"writer = ?, " + 
-						"title = ?, " + 
-						"content = ?, " + 
-						"writedate = to_date(?, 'rrrr-mm-dd' ) " + 
-						"cnt = ?, " + 
-						"where id = ?");){
+						"update news set writer = ?,title = ?, content = ? where id = ?");){
 			pstmt.setString(1, vo.getWriter());
 			pstmt.setString(2, vo.getTitle());
 			pstmt.setString(3, vo.getContent());
-			pstmt.setString(4, vo.getWritedate());
-			pstmt.setInt(5, vo.getCnt());
-			pstmt.setInt(6, vo.getId());
+			pstmt.setInt(4, vo.getId());
 			pstmt.executeUpdate();			
 		}catch(SQLException e){
 			result = false;
 			e.printStackTrace();
-		}
+		}	
+		
 		return result;
 	}
 
@@ -188,13 +215,21 @@ public NewsVO listOne(int id) {
 	} catch(Exception e) {
 		System.out.println(e.getMessage());
 	}
+	try(Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","jdbctest","jdbctest");
+			PreparedStatement pstmt = conn.prepareStatement(
+					"update news set cnt=cnt+1 where id = "+id);){	
+		pstmt.executeUpdate();			
+	}catch(SQLException e){
+		
+		e.printStackTrace();
+	}	
 	try (Connection conn = DriverManager.getConnection
 			("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", 
 					"jdbctest");
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery
 			("select id, writer, title, content,  to_char(writedate, "
-			+ "'rrrr\"년\" mm\"월\" dd\"일\"'), cnt from news where id =" + id);) {
+			+ "'rrrr-mm-dd'), cnt from news where id =" + id);) {
 		if(rs.next()) {
 			vo.setId(rs.getInt(1));
 			vo.setWriter(rs.getString(2));
@@ -202,7 +237,6 @@ public NewsVO listOne(int id) {
 			vo.setContent(rs.getString(4));
 			vo.setWritedate(rs.getString(5));
 			vo.setCnt(rs.getInt(6));
-			
 		}
 		else{
 			return null;
@@ -210,6 +244,7 @@ public NewsVO listOne(int id) {
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
+	
 	return vo;
 }
 

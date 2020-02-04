@@ -24,16 +24,16 @@ public class MemberServlet extends HttpServlet {
 		MemberVO vo = new MemberVO();
 
 		if(name.equals("")) {
-			name = "ì—†ìŒ";
+			name = "?—†?Œ";
 		}
 		if(number.equals("")) {
-			number = "ì—†ìŒ";
+			number = "?—†?Œ";
 		}
 		if(account.equals("")) {
-			account = "ì—†ìŒ";
+			account = "?—†?Œ";
 		}
 		if(pwd.equals("")) {
-			pwd = "ì—†ìŒ";
+			pwd = "?—†?Œ";
 		}
 		
 		vo.setName(name);

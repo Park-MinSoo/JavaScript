@@ -25,7 +25,7 @@ public class VisitorDAO {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
 				("select name, to_char(writedate, "
-				+ "'yyyy\"ÎÖÑ\" mm\"Ïõî\" dd\"Ïùº\"'), memo from visitor");) {
+				+ "'yyyy\"?ÖÑ\" mm\"?õî\" dd\"?ùº\"'), memo from visitor");) {
 			VisitorVO vo;
 			while(rs.next()) {
 				vo = new VisitorVO();
@@ -50,7 +50,7 @@ public class VisitorDAO {
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
-				("select name, to_char(writedate, 'yyyy\"ÎÖÑ\" mm\"Ïõî\" dd\"Ïùº\"'), memo "
+				("select name, to_char(writedate, 'yyyy\"?ÖÑ\" mm\"?õî\" dd\"?ùº\"'), memo "
 						+"from visitor where memo like '%"+keyword+"%'");) {
 			VisitorVO vo;
 			while(rs.next()) {

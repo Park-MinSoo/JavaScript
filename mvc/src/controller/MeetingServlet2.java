@@ -28,16 +28,16 @@ public class MeetingServlet2 extends HttpServlet {
 			if(action != null) {
 				boolean result = dao.delete(Integer.parseInt(id));
 				if (result) {
-					request.setAttribute("msg", "ê¸€ì´ ì„±ê³µì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
+					request.setAttribute("msg", "ê¸??´ ?„±ê³µì ?œ¼ë¡? ?‚­? œ?˜?—ˆ?Šµ?‹ˆ?‹¤.");
 				} else {
-					request.setAttribute("msg", "ê¸€ì´ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+					request.setAttribute("msg", "ê¸??´ ?‚­? œ?˜ì§? ?•Š?•˜?Šµ?‹ˆ?‹¤.");
 				}
 			} 
 			request.setAttribute("list", dao.listAll());
 		} else {
 			List<MeetingVO> list = dao.search(keyword);
 			if (list != null && list.size() == 0) {
-				request.setAttribute("msg", keyword + "(ì´)ê°€ í¬í•¨ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.");
+				request.setAttribute("msg", keyword + "(?´)ê°? ?¬?•¨?œ ê¸??´ ?—†?Šµ?‹ˆ?‹¤.");
 			} else {
 				request.setAttribute("list", dao.search(keyword));
 			}
@@ -59,17 +59,17 @@ public class MeetingServlet2 extends HttpServlet {
 		if(action.equals("insert")) {
 			boolean result = dao.insert(vo);
 			if (result) {			
-				request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ì„±ê³µì ìœ¼ë¡œ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");			
+				request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?„±ê³µì ?œ¼ë¡? ?…? ¥?˜?—ˆ?Šµ?‹ˆ?‹¤.");			
 			} else {
-				request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+				request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?…? ¥?˜ì§? ?•Š?•˜?Šµ?‹ˆ?‹¤.");
 			}
 		} else {
 			vo.setId(Integer.parseInt(action));
 			boolean result = dao.update(vo);
 			if (result) {			
-				request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ì„±ê³µì ìœ¼ë¡œ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");			
+				request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?„±ê³µì ?œ¼ë¡? ?ˆ˜? •?˜?—ˆ?Šµ?‹ˆ?‹¤.");			
 			} else {
-				request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+				request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?ˆ˜? •?˜ì§? ?•Š?•˜?Šµ?‹ˆ?‹¤.");
 			}
 		}
 		request.setAttribute("list", dao.listAll());

@@ -31,7 +31,7 @@ public class MeetingServlet extends HttpServlet {
 			else {
 				List<MeetingVO> list = dao.search(keyword);
 				if (list.size() == 0) {
-					request.setAttribute("msg", keyword + "ë¥¼ ë‹´ê³ ìˆëŠ” ê¸€ì´ ì—†ì–´ìš©");
+					request.setAttribute("msg", keyword + "ë¥? ?‹´ê³ ìˆ?Š” ê¸??´ ?—†?–´?š©");
 				} else {
 					request.setAttribute("list", list);
 				}
@@ -62,9 +62,9 @@ public class MeetingServlet extends HttpServlet {
 		vo.setMeetingDate(meetingdate);
 		boolean result = dao.insert(vo);
 		if (result) {
-			request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ì„±ê³µì ìœ¼ë¡œ ì…ë ¥ë˜ì—ˆì–´ìš”!!..");
+			request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?„±ê³µì ?œ¼ë¡? ?…? ¥?˜?—ˆ?–´?š”!!..");
 		} else {
-			request.setAttribute("msg", name + "ë‹˜ì˜ ê¸€ì´ ì…ë ¥ì— ì‹¤íŒ¨í–ˆì–´ìš”!!");
+			request.setAttribute("msg", name + "?‹˜?˜ ê¸??´ ?…? ¥?— ?‹¤?Œ¨?–ˆ?–´?š”!!");
 		}
 		request.getRequestDispatcher("/jspexam/meetingView_jstl.jsp").forward(request, response);
 	}
