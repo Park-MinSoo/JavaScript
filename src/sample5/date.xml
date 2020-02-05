@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="hong" class="sample5.DateVo">
+	<property name="name" value="Duke"/>
+	<property name="birth" value="1990-01-01"/>
+</bean>
+
+<bean id="lee" class="sample5.DateVo" 
+	p:name="Dooly"  p:birth="2000-12-12"/>	<!-- property 라는 서브태그 대신에 호출하고자하는 서브메서드에 p를 붙여서 프로퍼티를 대신할 수 있게끔 해주었다. 이를 프리픽스라고 한다. -->
+</beans>
+
+ 
+ 
