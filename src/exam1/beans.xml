@@ -12,6 +12,6 @@
 
 <bean id="nig" class="exam1.NightGreetingImpl"/>
 
-<bean id="time" class="exam1.GreetingTest" factory-method="LocalDateTime.now"/>
+<bean id="time" class="java.time.LocalDateTime" factory-method="now"/>
 
 </beans>

@@ -2,6 +2,7 @@
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.time.LocalDateTime;
 
 public class GreetingTest {
 	public static void main(String[] args) {
@@ -11,19 +12,19 @@ public class GreetingTest {
 		Greeting aft = (Greeting) factory.getBean("aft");
 		Greeting eve = (Greeting) factory.getBean("eve");
 		Greeting nig = (Greeting) factory.getBean("nig");	
-		Greeting time = (Greeting) factory.getBean("time");
+		LocalDateTime time = factory.getBean("time",LocalDateTime.class);
 		
-		if(time >= 6 && time < 12) {
-			System.out.println(mor);
+		if(time.getHour() >= 6 && time.getHour() < 12) {
+			mor.greet();
 		}
-		else if(time >= 12 && time < 17 ) {
-			System.out.println(aft);
+		else if(time.getHour() >= 12 && time.getHour() < 17 ) {
+			aft.greet();
 		}
-		else if(time >= 17 && time < 22 ) {
-			System.out.println(eve);
+		else if(time.getHour() >= 17 && time.getHour() < 22 ) {
+			eve.greet();
 		}
 		else {
-			System.out.println(nig);
+			nig.greet();
 		}
 			
 		((ClassPathXmlApplicationContext)factory).close();
